@@ -4,7 +4,9 @@
 **Clip**은 동아리 운영을 자동화하는 서비스를 개발하는 주니어 개발자 팀입니다.  
 출석 체크, 공지사항, 과제 벌금 관리, 일정 조율 등을 자동화하여 **더 효율적인 동아리 운영**을 목표로 하고 있습니다.
 
+<br>
 ---
+<br>
 
 ### 🚀 우리는 어떤 서비스를 만들고 있나요?
 Clip은 **Flutter 기반**의 애플리케이션과 웹 대시보드를 통해 다음 기능을 제공합니다:
@@ -13,8 +15,110 @@ Clip은 **Flutter 기반**의 애플리케이션과 웹 대시보드를 통해 �
 - 💰 **과제 벌금 관리** – 과제 미제출자 벌금 자동 관리
 - 🗓️ **일정 조율** – 팀원들의 일정 데이터를 활용한 최적 시간 추천
 
+<br>
 ---
+<br>
+
+## 🏗️ 브랜치 명명 규칙
+
+Clip 프로젝트의 브랜치 관리는 **일관된 네이밍 규칙**을 사용하여 효율적인 개발을 목표로 합니다.  
+브랜치는 다음 4가지 타입만 존재합니다.
+
+### 🔹 **브랜치 종류**
+- `main` → **프로덕션 배포 (최종 배포 버전)**
+- `release` → **테스트 및 QA를 위한 릴리즈 브랜치**
+- `develop` → **기능 개발을 위한 메인 브랜치**
+- `fix` → **버그 수정 브랜치**
+
+### 🔹 **개별 작업 브랜치 생성 규칙**
+1. **테스크 단위로 브랜치를 생성**  
+2. **작업자의 이름과 작업 내용을 포함**  
+3. **`develop` 브랜치를 기반으로 생성**
+
+#### ✅ **브랜치 네이밍 패턴**
+```
+develop/{이름}/{작업내용}
+fix/{이름}/{버그내용}
+```
+
+#### 📌 **브랜치 생성 예시**
+- 출석 코드 인증 기능 개발 → `develop/youngbin/attendance-code`
+- 공지사항 CRUD 개발 → `develop/minseung/notice-crud`
+- 일정 조율 기능 추가 → `develop/jihyun/schedule-sync`
+- 버그 수정 (출석 데이터 오류) → `fix/youngbin/attendance-data-error`
+
+<br><br>
+
+## ✏️ 커밋 메시지 규칙
+
+커밋 메시지는 **명확하고 일관된 형식**을 따릅니다.
+
+### ✅ **커밋 메시지 형식**
+- `feat: 공지사항 CRUD 기능 구현`
+- `fix: 출석 데이터 저장 오류 수정`
+- `refactor: 백엔드 API 요청 로직 개선`
+- `docs: README.md 업데이트`
+
+### 🔹 **커밋 타입 목록**
+| 타입 | 설명 |
+|------|----------------------------------|
+| `feat` | 새로운 기능 추가 |
+| `fix` | 버그 수정 |
+| `docs` | 문서 변경 (README 등) |
+| `refactor` | 코드 리팩토링 |
+| `test` | 테스트 코드 추가 |
+| `chore` | 빌드 및 기타 작업 |
+
+<br><br><br>
+
+## 🛠️ Flutter 개발 환경 설정
+
+### 📌 **필수 요구사항**
+- Flutter SDK (`>=3.x.x`)
+- Dart (`>=2.x.x`)
+- IDE: Visual Studio Code / Android Studio
+- 패키지 매니저: `pub`
+
+### 📦 **Flutter 프로젝트 세팅**
+```bash
+# 1️⃣ Flutter SDK 설치 확인
+flutter --version
+
+# 2️⃣ 프로젝트 패키지 설치
+flutter pub get
+
+# 3️⃣ 앱 실행 (에뮬레이터 또는 실기기)
+flutter run
+```
+
+## 📌 프로젝트 폴더 구조
+```
+lib/
+  ├── main.dart         # 앱 실행 진입점
+  ├── screens/          # UI 화면 관리
+  ├── services/         # Firebase, API 서비스
+  ├── models/           # 데이터 모델
+  ├── providers/        # 상태 관리 (Provider 사용)
+  ├── utils/            # 공통 함수 및 헬퍼
+  ├── Widgets/          # 공통 위젯 클래스
+  ├── constants/        # 상수 및 설정
+```
+
+<br><br>
+
+## 📜 기여 가이드
+1. `develop` 브랜치를 기반으로 새 브랜치 생성 (`develop/{이름}/{작업내용}`)
+2. 작업 완료 후 PR 생성 (Pull Request)
+3. 코드 리뷰 후 `develop` 브랜치로 병합
+4. QA 진행 후 `release` 브랜치로 배포  
+
+
+## 🔗 참고 자료
+- **Flutter 공식 문서**: [https://flutter.dev/docs](https://flutter.dev/docs)
+- **Dart 언어 문서**: [https://dart.dev/guides](https://dart.dev/guides)
+- **Firebase 연동**: [https://firebase.flutter.dev/docs](https://firebase.flutter.dev/docs)
+
+
 
 💡 **함께 더 나은 동아리 운영 서비스를 만들어봐요!**  
 📬 궁금한 점이 있다면 언제든 문의해주세요! 🚀
-
